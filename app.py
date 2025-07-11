@@ -16,6 +16,14 @@ model, scaler = load_model_scaler()
 
 st.title("🧠 Parkinson Disease Detector")
 st.markdown("Upload a CSV file with 22 features (without `name` and `status`).")
+# ⬇️ Download sample CSV
+with open("model/sample_input_200.csv", "rb") as f:
+    st.download_button(
+        label="📥 Download Sample CSV",
+        data=f,
+        file_name="sample_input_200.csv",
+        mime="text/csv"
+    )
 
 uploaded_file = st.file_uploader("Upload CSV", type=["csv"])
 
